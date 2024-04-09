@@ -1,6 +1,13 @@
 from django.shortcuts import render
 import sqlite3
 # Create your views here.
+
+def welcome(request):
+    return render(request, 'welcome.html')
+
+def shop(request):
+    return render(request,'shop.html')
+
 def index (request):
     flag = False
     if request.method == "POST":
@@ -17,3 +24,5 @@ def index (request):
         return render(request, 'index.html')
     else:
         return render(request,'main.html', {'data': flag})
+
+
