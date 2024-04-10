@@ -1,12 +1,15 @@
 from django.shortcuts import render
 import sqlite3
+from .models import Users
+from .models import Makers, Warehouses, Category, Goods
 # Create your views here.
 
 def welcome(request):
     return render(request, 'welcome.html')
 
 def shop(request):
-    return render(request,'shop.html')
+    goods = Goods.objects.all()
+    return render(request,'shop.html', {'data': goods})
 
 def index (request):
     flag = False
@@ -23,6 +26,7 @@ def index (request):
     if flag == False:
         return render(request, 'index.html')
     else:
-        return render(request,'main.html', {'data': flag})
+        users = Users.objects.all()
+        return render(request,'main.html', {'users': users})
 
 

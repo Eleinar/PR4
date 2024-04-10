@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +11,22 @@
 <body>
     <div class="uk-overlay-primary uk-position-cover"></div>
     <div class="uk-overlay uk-position-center uk-light">
-        <p>login: {{ data }}</p>
+     <table>
+         <thead>
+            <tr>
+                <th>User login</th>
+                <th>User password</th>
+            </tr>
+         </thead>
+         <tbody>
+         {% for row in users %}
+         <tr>
+             <th>{{ row.login }}</th>
+             <th>{{ row.password }}</th>
+         </tr>
+         {% endfor %}
+         </tbody>
+     </table>
     </div>
 </body>
 </html>

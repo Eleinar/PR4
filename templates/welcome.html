@@ -7,6 +7,23 @@
     <link href="{% static 'css/uikit.min.css' %}" rel="stylesheet">
     <script src="{% static 'js/uikit.min.js' %}"></script>
     <script src="{% static 'js/uikit-icons.min.js' %}"></script>
+
+   <style>
+   html, body {
+    height: 100%;
+    margin: 0;
+   }
+   .wrapper {
+    min-height: 100%;
+    /* Равно высоте подвала, */
+    /* но с учётом margin-bottom у последнего дочернего элемента */
+    margin-bottom: -50px;
+   }
+   .footer,
+   .push {
+    height: 50px;
+   }
+  </style>
 </head>
 <body>
     <nav class="uk-navbar-container uk-margin" uk-navbar>
@@ -33,7 +50,6 @@ Pellentesque justo turpis, ullamcorper in dapibus non, auctor at odio. Nulla int
             </div>
  </div>
 <!--<img data-src="imgs/billy.jpg" width="" height="" alt="aaa" uk-img>-->
-
 
 </body>
 </html>
